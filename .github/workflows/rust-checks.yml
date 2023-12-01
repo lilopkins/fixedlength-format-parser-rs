@@ -37,7 +37,7 @@ jobs:
         run: cargo clippy
 
   check-tests:
-    name: Check Formatting
+    name: Run tests
     runs-on: ubuntu-latest
 
     steps:
@@ -47,5 +47,5 @@ jobs:
       - name: Install latest Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Check formatting
+      - name: Run tests
         run: cargo test
