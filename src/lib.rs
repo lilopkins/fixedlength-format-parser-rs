@@ -167,7 +167,10 @@ pub fn fixed_length_format_parser(item: TokenStream) -> TokenStream {
         impl ::std::error::Error for #error_ident {}
         impl ::std::fmt::Display for #error_ident {
             fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-                write!(f, "{self:?}")
+                match self {
+                    Self::InvalidRecordType => write!(f, "invalid record type"),
+                    Self::FailedToParse { record_type, field } => write!(f, "failed to parse field `{field}` in {record_type} record."),
+                }
             }
         }
 
