@@ -3,6 +3,7 @@ name = "fixedlength-format-parser"
 version = "0.1.0"
 edition = "2021"
 authors = [ "Lily Hopkins <lily@hpkns.uk>" ]
+repository = "https://github.com/lilopkins/fixedlength-format-parser-rs"
 license = "MIT"
 description = "Build parsers for files with fixed length, record-like fields."
 
